@@ -23,7 +23,7 @@ STALL_GENS = 4
 MAX_FAILS = 2
 LEASE_S = 240
 GPU_THREADS = str(getattr(C, "GPU_THREADS", 4))
-WS_FALLBACK = dict(sub="7a8513b6-ada2-4ad1-aee2-687fa5663c82", rg="AIModels", ws="RLVR")
+WS_FALLBACK = dict(sub="", rg="", ws="")
 
 CONDA_V2 = """name: wdladder
 channels: [conda-forge]

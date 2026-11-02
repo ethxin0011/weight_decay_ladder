@@ -7,7 +7,7 @@ survives when BOTH methods are tuned, and what law gives the optimal decay?
 
 STEP-BY-STEP
   python config.py            # prints the ladder, MAI hyper-parameters, decay integrals
-  Edit only:  AZURE / FOUNDRY (already filled), PRICES (match your billing tier),
+  Edit only:  AZURE, PRICES (match your billing tier),
               BUDGET_USD, PLACEMENT.  Never put secrets in this file.
 Secrets are read from env vars or ~/.wdladder_secrets (written by the notebook).
 """
@@ -37,9 +37,9 @@ AZURE = dict(
     subscription_id="",
     resource_group="",
     workspace="",
-    compute_instance="",            # Standard_E20ads_v5 (20 vCPU, 160 GB): data prep + analysis
-    gpu_cluster="",                   # Standard_NC4as_T4_v3 (1x T4, 4 vCPU): L4/L6/L9
-    cpu_cluster="",                # created by azure_jobs.ensure_cpu_cluster: L3 runs
+    compute_instance="cpurlvr",            # Standard_E20ads_v5 (20 vCPU, 160 GB): data prep + analysis
+    gpu_cluster="rlvr2",                   # Standard_NC4as_T4_v3 (1x T4, 4 vCPU): L4/L6/L9
+    cpu_cluster="cpu-rlvr",                # created by azure_jobs.ensure_cpu_cluster: L3 runs
     cpu_cluster_size="Standard_F16s_v2",   # 16 vCPU AVX-512, 32 GB; 2 runs x 8 threads per node
     cpu_cluster_max_nodes=6,
     cpu_low_priority=True,
@@ -48,13 +48,6 @@ AZURE = dict(
     experiment_name="wdladder",
     datastore="workspaceblobstore",
     remote_prefix="wdladder",              # datastore folder: wdladder/runs/<run>/
-)
-
-FOUNDRY = dict(
-    endpoint="https://llmmodelsperf.openai.azure.com/",
-    api_version="2024-12-01-preview",
-    deployment_main="",         # accuracy-critical: gate reviews, results drafting
-    deployment_fast="",                    # optional GPT-5-series deployment name for cheap log triage
 )
 
 # ----------------------------------------------------------------- budget (USD)

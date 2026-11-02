@@ -1,0 +1,141 @@
+{
+ "per_rung": [
+  {
+   "L": 3,
+   "untuned_gap": 0.03499458361150154,
+   "tuned_gap": 0.0035951139036349833,
+   "survival": 0.10273343850999246,
+   "p_opt_const": 0.19235333711324967,
+   "p_opt_scaled": 0.2687316244284725,
+   "wd_ratio": 1.3970728476119676,
+   "bpb_opt_const": 1.2755808337943875,
+   "bpb_opt_scaled": 1.2719857198907525,
+   "const_opt_outside_sweep": false,
+   "scaled_opt_outside_sweep": false
+  },
+  {
+   "L": 4,
+   "untuned_gap": 0.031054598865553062,
+   "tuned_gap": 0.004024557586264743,
+   "survival": 0.12959618650005925,
+   "p_opt_const": 0.2532447175918789,
+   "p_opt_scaled": 0.4140021181674052,
+   "wd_ratio": 1.634790735633814,
+   "bpb_opt_const": 1.1888125366618363,
+   "bpb_opt_scaled": 1.1847879790755715,
+   "const_opt_outside_sweep": false,
+   "scaled_opt_outside_sweep": true
+  },
+  {
+   "L": 6,
+   "untuned_gap": 0.024072967394850542,
+   "tuned_gap": 0.005134031133185113,
+   "survival": 0.21326955871187428,
+   "p_opt_const": 0.3311737509155802,
+   "p_opt_scaled": 0.6316725094739795,
+   "wd_ratio": 1.9073749285008994,
+   "bpb_opt_const": 1.0210189581611806,
+   "bpb_opt_scaled": 1.0158849270279955,
+   "const_opt_outside_sweep": true,
+   "scaled_opt_outside_sweep": true
+  }
+ ],
+ "fits": {
+  "L3": {
+   "const": {
+    "n_points": 6,
+    "p_opt": 0.19235333711324967,
+    "bpb_opt": 1.2755808337943875,
+    "bpb_at_p1": 1.32209069669182,
+    "p1_measured": true,
+    "opt_outside_sweep": false,
+    "coef": [
+     0.008538413666356505,
+     0.04061158540952704,
+     1.323871445315529
+    ],
+    "p_min": 0.125,
+    "p_max": 4.0
+   },
+   "scaled": {
+    "n_points": 7,
+    "p_opt": 0.2687316244284725,
+    "bpb_opt": 1.2719857198907525,
+    "bpb_at_p1": 1.2870961130803185,
+    "p1_measured": true,
+    "opt_outside_sweep": false,
+    "coef": [
+     0.0047872406008562145,
+     0.018150937504631263,
+     1.2891906485629245
+    ],
+    "p_min": 0.125,
+    "p_max": 8.0
+   }
+  },
+  "L4": {
+   "const": {
+    "n_points": 5,
+    "p_opt": 0.2532447175918789,
+    "bpb_opt": 1.1888125366618363,
+    "bpb_at_p1": 1.223972130397757,
+    "p1_measured": true,
+    "opt_outside_sweep": false,
+    "coef": [
+     0.008949516023489411,
+     0.03546506904458481,
+     1.2241328132149907
+    ],
+    "p_min": 0.25,
+    "p_max": 4.0
+   },
+   "scaled": {
+    "n_points": 5,
+    "p_opt": 0.4140021181674052,
+    "bpb_opt": 1.1847879790755715,
+    "bpb_at_p1": 1.192917531532204,
+    "p1_measured": true,
+    "opt_outside_sweep": true,
+    "coef": [
+     0.005648867154600365,
+     0.01437399377252679,
+     1.193931922954849
+    ],
+    "p_min": 0.5,
+    "p_max": 8.0
+   }
+  },
+  "L6": {
+   "const": {
+    "n_points": 4,
+    "p_opt": 0.3311737509155802,
+    "bpb_opt": 1.0210189581611806,
+    "bpb_at_p1": 1.0425456764806758,
+    "p1_measured": false,
+    "opt_outside_sweep": true,
+    "coef": [
+     0.008462062361526,
+     0.0269828050613578,
+     1.0425456764806758
+    ],
+    "p_min": 0.354,
+    "p_max": 2.83
+   },
+   "scaled": {
+    "n_points": 4,
+    "p_opt": 0.6316725094739795,
+    "bpb_opt": 1.0158849270279955,
+    "bpb_at_p1": 1.0184727090858252,
+    "p1_measured": false,
+    "opt_outside_sweep": true,
+    "coef": [
+     0.005891508528895934,
+     0.007809209963787067,
+     1.0184727090858252
+    ],
+    "p_min": 0.708,
+    "p_max": 5.66
+   }
+  }
+ }
+}

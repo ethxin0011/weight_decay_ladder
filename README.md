@@ -31,7 +31,6 @@ The whole study (81 runs) ran on **one NVIDIA T4 GPU** in Azure ML. A self-resub
 | `azure_jobs.py` | Azure ML plumbing: clusters, environment, data asset, submission, status, result sync, cancel. |
 | `chain.py` | Self-healing GPU job chain: the GPU job is its own watcher, so no compute instance needs to stay on. |
 | `analysis.py` | Gates, quadratic fits, hypothesis tests, scale trend, figures and `report.md`. |
-| `llm_review.py` | Optional LLM "second reviewer" of each stage's results; never makes gate decisions. |
 | `tests/smoke_test.py` | Unit and end-to-end checks to run before any paid job. |
 | `env_conda.yml` / `env_conda_v2.yml` | Job environments (v2 adds `azure-ai-ml` / `azure-identity` for `chain.py`). |
 | `orchestrate.ipynb` | Notebook that runs the whole pipeline step by step. |
@@ -59,7 +58,6 @@ The whole study (81 runs) ran on **one NVIDIA T4 GPU** in Azure ML. A self-resub
   - Tuned-gap null threshold: 0.002 BPB.
 - **Secrets** are never stored in code. They are read from environment variables or `~/.wdladder_secrets`:
   - `HF_TOKEN` (optional; for rate limits only).
-  - `AZURE_OPENAI_KEY` (only needed by `llm_review.py`).
 
 Check the settings:
 ```bash
@@ -174,11 +172,10 @@ chain.stop("gpu")                          # kill switch (checkpoints kept)
 | 5 – L6 | 8 | LR·WD sweep for each method at the third rung (about 23 GPU-hours per run). |
 | 6 – L9 | – | Planned but not run (compute limit). |
 
-### Step 8 – Analysis and review (`analysis.py`, `llm_review.py`)
+### Step 8 – Analysis (`analysis.py`)
 ```bash
 python analysis.py --stage 3          # gates, fits, tuned gap, survival, hypotheses -> report/report.md
 python analysis.py --stage 5          # adds the L4/L6 scale trend and the L6 transfer check
-python llm_review.py review --stage 5 # optional anomaly review -> report/llm_review_stage5.md
 ```
 `analysis.py`:
 - Applies the preregistered gates.
@@ -210,16 +207,4 @@ L3 full 2D fit with four paired seeds: tuned gap 0.00261 BPB (95% CI [0.00183, 0
 - Python 3.10, PyTorch 2.4 (CUDA 11.8 for the T4, or CPU), `numpy<2`, `scipy`, `pandas`, `pyarrow`.
 - Data preparation: `datasets`, `tokenizers`.
 - Azure: `azure-ai-ml`, `azure-identity`, `azure-storage-blob`.
-- Optional review step: `openai`.
 
-## Citation
-
-```bibtex
-@article{xin2026tunebaseline,
-  title   = {Tune the Baseline First: Most of Muon's Scaled Weight Decay Gain Is a Tuning Gap,
-             but Its Small Real Advantage Grows With Model Size},
-  author  = {Xin, Esther},
-  journal = {arXiv preprint},
-  year    = {2026}
-}
-```

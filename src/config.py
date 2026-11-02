@@ -18,7 +18,7 @@ import os
 from dataclasses import asdict, dataclass
 
 # ----------------------------------------------------------------- paths
-NOTEBOOK_ROOT = "/home/azureuser/cloudfiles/code/Users/estherxin0011"
+NOTEBOOK_ROOT = "/home/azureuser"
 PROJECT_DIR = os.environ.get("WDL_PROJECT", os.path.join(NOTEBOOK_ROOT, "wdladder"))
 DATA_ROOT = os.environ.get("WDL_DATA", "/home/azureuser/wdladder_data")   # local SSD, not cloudfiles
 SMOKE_ROOT = DATA_ROOT + "_smoke"
@@ -34,12 +34,12 @@ P = data_paths()
 
 # ----------------------------------------------------------------- Azure (from your settings)
 AZURE = dict(
-    subscription_id="7a8513b6-ada2-4ad1-aee2-687fa5663c82",
-    resource_group="AIModels",
-    workspace="RLVR",
-    compute_instance="cpurlvr",            # Standard_E20ads_v5 (20 vCPU, 160 GB): data prep + analysis
-    gpu_cluster="rlvr2",                   # Standard_NC4as_T4_v3 (1x T4, 4 vCPU): L4/L6/L9
-    cpu_cluster="cpu-rlvr",                # created by azure_jobs.ensure_cpu_cluster: L3 runs
+    subscription_id="",
+    resource_group="",
+    workspace="",
+    compute_instance="",            # Standard_E20ads_v5 (20 vCPU, 160 GB): data prep + analysis
+    gpu_cluster="",                   # Standard_NC4as_T4_v3 (1x T4, 4 vCPU): L4/L6/L9
+    cpu_cluster="",                # created by azure_jobs.ensure_cpu_cluster: L3 runs
     cpu_cluster_size="Standard_F16s_v2",   # 16 vCPU AVX-512, 32 GB; 2 runs x 8 threads per node
     cpu_cluster_max_nodes=6,
     cpu_low_priority=True,
@@ -53,7 +53,7 @@ AZURE = dict(
 FOUNDRY = dict(
     endpoint="https://llmmodelsperf.openai.azure.com/",
     api_version="2024-12-01-preview",
-    deployment_main="gpt-6.1-sol",         # accuracy-critical: gate reviews, results drafting
+    deployment_main="",         # accuracy-critical: gate reviews, results drafting
     deployment_fast="",                    # optional GPT-5-series deployment name for cheap log triage
 )
 

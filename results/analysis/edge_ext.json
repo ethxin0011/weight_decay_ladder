@@ -1,0 +1,32 @@
+[
+ {
+  "method": "const",
+  "lr_mult": 0.5,
+  "prod_mult": 8.0
+ },
+ {
+  "method": "const",
+  "lr_mult": 1.0,
+  "prod_mult": 8.0
+ },
+ {
+  "method": "const",
+  "lr_mult": 2.0,
+  "prod_mult": 8.0
+ },
+ {
+  "method": "scaled",
+  "lr_mult": 0.5,
+  "prod_mult": 16.0
+ },
+ {
+  "method": "scaled",
+  "lr_mult": 1.0,
+  "prod_mult": 16.0
+ },
+ {
+  "method": "scaled",
+  "lr_mult": 2.0,
+  "prod_mult": 16.0
+ }
+]

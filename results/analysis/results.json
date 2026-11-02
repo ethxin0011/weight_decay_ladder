@@ -1,0 +1,148 @@
+{
+ "gate1": {
+  "decision": "FAIL",
+  "gain_mean": -0.7282254403899429,
+  "gains": [
+   -1.4914263985852376,
+   0.03497551780535191
+  ],
+  "seed_noise": 1.527420208388772,
+  "threshold": 3.054840416777544,
+  "gain_tpp30": 0.046268982280819326,
+  "const": [
+   1.3225998426909114,
+   1.3215815506927289
+  ],
+  "scaled": [
+   2.814026241276149,
+   1.286606032887377
+  ],
+  "speedup_untuned": 0.012136966150795871,
+  "note": "PASS -> stage 2; WEAK -> stage 2 grid only (skip GPU until gate 2); FAIL -> stop, write the negative replication note (Muon-SW gain absent on MAI-style MoE ladder)"
+ },
+ "interim_gap": {
+  "0": {
+   "30": -0.0003,
+   "60": 0.0017,
+   "90": 0.0111,
+   "120": 0.0279,
+   "150": 0.0377,
+   "180": 0.0239,
+   "210": 0.0743,
+   "240": 0.0825,
+   "270": 0.0442,
+   "300": 0.0752
+  },
+  "1": {
+   "693": -0.0003,
+   "1386": 0.003,
+   "2079": 0.0144,
+   "2772": 0.0206,
+   "3465": 0.0328,
+   "4158": 0.0398,
+   "4851": 0.0441,
+   "5544": 0.0419,
+   "6237": 0.0366,
+   "6930": 0.035
+  }
+ },
+ "seed_sd": 0.6304382991170936,
+ "hypotheses": {
+  "cos": {
+   "H_none": 1.0,
+   "H_int": 1.363998845699143,
+   "H_end": 10.0,
+   "r": 0.7331384503389601
+  },
+  "wsd": {
+   "H_none": 1.0,
+   "H_int": 1.045645743254893,
+   "H_end": 10.0,
+   "r": 0.9563468377800625
+  }
+ },
+ "edge_extension": [
+  {
+   "method": "const",
+   "lr_mult": 0.5,
+   "prod_mult": 8.0
+  },
+  {
+   "method": "const",
+   "lr_mult": 1.0,
+   "prod_mult": 8.0
+  },
+  {
+   "method": "const",
+   "lr_mult": 2.0,
+   "prod_mult": 8.0
+  },
+  {
+   "method": "scaled",
+   "lr_mult": 0.5,
+   "prod_mult": 16.0
+  },
+  {
+   "method": "scaled",
+   "lr_mult": 1.0,
+   "prod_mult": 16.0
+  },
+  {
+   "method": "scaled",
+   "lr_mult": 2.0,
+   "prod_mult": 16.0
+  }
+ ],
+ "speedup_at_fitted_opt": {},
+ "data_law": {
+  "E": 0.9941980841142298,
+  "A": 0.4069761429236885,
+  "alpha": 0.2655265362613716
+ },
+ "wd_ratio_wsd": 0.28702679510801843,
+ "K_rel_wsd": {
+  "const": 0.09997661506325203,
+  "scaled": 0.027443297687062038
+ },
+ "hypothesis_verdict": {
+  "wsd": {
+   "measured": 0.28702679510801843,
+   "ci": [
+    0.19135119673867895,
+    0.43054019266202764
+   ],
+   "consistent": [],
+   "closest": "H_none"
+  }
+ },
+ "scale_trend": {
+  "const": {
+   "L3": NaN,
+   "L4": 0.2532447175918854,
+   "L6_pred": 0.2532447175918854
+  },
+  "scaled": {
+   "L3": NaN,
+   "L4": 0.41400211816737426,
+   "L6_pred": 0.41400211816737426
+  }
+ },
+ "L6": {
+  "const": {
+   "best": 1.0210189581611806,
+   "at_pred": 1.0223035193378247,
+   "regret": 0.0012845611766441056,
+   "fitted": 0.3311737509155501,
+   "pred": 0.2532447175918854
+  },
+  "scaled": {
+   "best": 1.0159213188915845,
+   "at_pred": 1.018073842502537,
+   "regret": 0.002188915474541586,
+   "fitted": 0.6316725094739677,
+   "pred": 0.41400211816737426
+  },
+  "tuned_gap": 0.005097639269596055
+ },
+ "outcome": "O3 non-replication: Muon-SW shows no gain over const decay at MAI hparams on the MoE ladder"
+}
